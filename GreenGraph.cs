@@ -35,10 +35,10 @@ class GreenGraph : Graph {
 
     public void AddEdge(Node i, Node j, int c) {
         //add edges
-        //create variables node a and node b that takes the indexOf a and b
-        //have c (cost) take the adjMatrix nodeA and nodeB
-        int nodeA = nodes.IndexOf(i);
-        int nodeB = nodes.IndexOf(j);
+        //create variables node i and node j that takes the indexOf i and j
+        //have c (cost) take the adjMatrix nodeI and nodeJ
+        int nodeI = nodes.IndexOf(i);
+        int nodeJ = nodes.IndexOf(j);
 
         c = adjMatrix[nodeI][nodeJ];
     }
@@ -49,7 +49,7 @@ class GreenGraph : Graph {
         return nodes;
     }
 
-    public List<Node> Neighbours(Node a)
+    public List<Node> Neighbours(Node i)
     {
         //to-from function 
         //if function
