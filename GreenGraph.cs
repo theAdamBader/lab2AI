@@ -19,26 +19,33 @@ class GreenGraph : Graph {
    }
 
 
-    public void AddNode(Node a) {
-        nodes.Add(a);
+    public void AddNode(Node i) {
+        nodes.Add(i);
 
         //create new list that adds a new node
         //write for loop that adds the new node
         List<int> newNode = new List<int>();
         adjMatrix.Add(newNode);
 
-        for (int i = 0; i < nodes.Count; i++) {
+        for (int k = 0; k < nodes.Count; k++) {
             newNode.Add(0);
-            adjMatrix[i].Add(0);
+            adjMatrix[k].Add(0);
         }
     }
 
-    public void AddEdge(Node a, Node b, int c) {
+    public void AddEdge(Node i, Node j, int c) {
         //add edges
+        //create variables node a and node b that takes the indexOf a and b
+        //have c (cost) take the adjMatrix nodeA and nodeB
+        int nodeA = nodes.IndexOf(i);
+        int nodeB = nodes.IndexOf(j);
+
+        c = adjMatrix[nodeI][nodeJ];
     }
 
     public List<Node> Nodes()
     {
+        //return a list of nodes
         return nodes;
     }
 
