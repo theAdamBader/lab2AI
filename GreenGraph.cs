@@ -21,14 +21,20 @@ class GreenGraph : Graph {
 
     public void AddNode(Node a) {
         nodes.Add(a);
+
+        //create new list that adds a new node
+        //write for loop that adds the new node
+        List<int> newNode = new List<int>();
+        adjMatrix.Add(newNode);
+
+        for (int i = 0; i < nodes.Count; i++) {
+            newNode.Add(0);
+            adjMatrix[i].Add(0);
+        }
     }
 
     public void AddEdge(Node a, Node b, int c) {
         //add edges
-        int nodeA = nodes.IndexOf(i);
-        int nodeB = nodes.IndexOf(j);
-
-        c = adjMatrix[nodeI][nodeJ];
     }
 
     public List<Node> Nodes()
