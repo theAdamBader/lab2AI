@@ -20,23 +20,24 @@ class GreenGraph : Graph {
 
 
     public void AddNode(Node i) {
+        //adds node i
         nodes.Add(i);
 
         //create new list that adds a new node
-        //write for loop that adds the new node
+        //write for loop that adds the new node j
         List<int> newNode = new List<int>();
         adjMatrix.Add(newNode);
 
-        for (int k = 0; k < nodes.Count; k++) {
+        for (int j = 0; j < nodes.Count; j++) {
             newNode.Add(0);
-            adjMatrix[k].Add(0);
+            adjMatrix[j].Add(0);
         }
     }
 
     public void AddEdge(Node i, Node j, int c) {
         //add edges
         //create variables node i and node j that takes the indexOf i and j
-        //have c (cost) take the adjMatrix nodeI and nodeJ
+        //have c (cost) take the adjMatrix[i][j]
         int nodeI = nodes.IndexOf(i);
         int nodeJ = nodes.IndexOf(j);
 
@@ -51,14 +52,25 @@ class GreenGraph : Graph {
 
     public List<Node> Neighbours(Node i)
     {
-        //to-from function 
-        //if function
-        return new List<Node>();
+        //adding a new list to find a neighbour list for node i
+        //creating a new list to find the neighbour and int to sort the new neighbour node
+        //using for loop, it searches through the matrix and if j is not i and adjMatrix[j][i] are not 0 then add node j
+        //else returns node.IndexOf(i)
+        List<Node> findMyNeighbours = new List<Node>();
+        int neighbourNodeI = nodes.IndexOf(i);
+
+        for (int j = 0; j < adjMatrix.Count; j++)
+        {
+            if (j != neighbourNodeI && adjMatrix[j][neighbourNodeI] != 0)
+                findMyNeighbours.Add(nodes[j]);
+        }
+        return findMyNeighbours;
     }
 
-    public int Cost(Node a, Node b)
+    public int Cost(Node i, Node j)
     {
-        return 1;
+        //returns the adjMatrix[i][j]
+        return adjMatrix[nodes.IndexOf(i)][nodes.IndexOf(j)];
     }
 
 
