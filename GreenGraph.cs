@@ -2,9 +2,14 @@ using System;
 using System.Collections.Generic;
 
 class GreenGraph : Graph {
-   
-   // List of nodes in this graph
-   private List<Node> nodes;
+
+    /*
+     Reference:
+     nodes.Add(): https://msdn.microsoft.com/en-us/library/ms379574(v=vs.80).aspx
+         */
+
+    // List of nodes in this graph
+    private List<Node> nodes;
 
    // An adjacency matrix, recording edges between nodes
    // Edges FROM node i are recorded in adjMatrix[i]
@@ -37,11 +42,11 @@ class GreenGraph : Graph {
     public void AddEdge(Node i, Node j, int c) {
         //add edges
         //create variables node i and node j that takes the indexOf i and j
-        //have c (cost) take the adjMatrix[i][j]
+        //have adjMatrix[i][j] sorted into c (cost)
         int nodeI = nodes.IndexOf(i);
         int nodeJ = nodes.IndexOf(j);
 
-        c = adjMatrix[nodeI][nodeJ];
+        adjMatrix[nodeI][nodeJ] = c;
     }
 
     public List<Node> Nodes()
