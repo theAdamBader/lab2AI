@@ -25,11 +25,11 @@ class GreenGraph : Graph {
 
 
     public void AddNode(Node i) {
-        //adds node i
+        // Adds node i
         nodes.Add(i);
 
-        //create new list that adds a new node
-        //write for loop that adds the new node j
+        // Create new list that adds a new node
+        // Write for loop that adds the new node j
         List<int> newNode = new List<int>();
         adjMatrix.Add(newNode);
 
@@ -40,9 +40,9 @@ class GreenGraph : Graph {
     }
 
     public void AddEdge(Node i, Node j, int c) {
-        //add edges
-        //create variables node i and node j that takes the indexOf i and j
-        //have adjMatrix[i][j] sorted into c (cost)
+        // Add edges
+        // Create variables node i and node j that takes the indexOf i and j
+        // Have adjMatrix[i][j] sorted into c (cost)
         int nodeI = nodes.IndexOf(i);
         int nodeJ = nodes.IndexOf(j);
 
@@ -51,16 +51,16 @@ class GreenGraph : Graph {
 
     public List<Node> Nodes()
     {
-        //return a list of nodes
+        // Return a list of nodes
         return nodes;
     }
 
     public List<Node> Neighbours(Node i)
     {
-        //adding a new list to find a neighbour list for node i
-        //creating a new list to find the neighbour and int to sort the new neighbour node
-        //using for loop, it searches through the matrix and if j is not i and adjMatrix[j][i] are not 0 then add node j
-        //else returns node.IndexOf(i)
+        // Adding a new list to find a neighbour list for node i
+        // Creating a new list to find the neighbour and int to sort the new neighbour node
+        // Using for loop, it searches through the matrix and if j is not i and adjMatrix[j][i] are not 0 then add node j
+        // Else returns node.IndexOf(i)
         List<Node> findMyNeighbours = new List<Node>();
         int neighbourNodeI = nodes.IndexOf(i);
 
@@ -74,7 +74,7 @@ class GreenGraph : Graph {
 
     public int Cost(Node i, Node j)
     {
-        //returns the adjMatrix[i][j]
+        // Returns the adjMatrix[i][j]
         return adjMatrix[nodes.IndexOf(i)][nodes.IndexOf(j)];
     }
 
