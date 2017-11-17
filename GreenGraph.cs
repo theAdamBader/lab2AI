@@ -60,7 +60,7 @@ class GreenGraph : Graph {
         // Adding a new list to find a neighbour list for node i
         // Creating a new list to find the neighbour and int to sort the new neighbour node
         // Using for loop, it searches through the matrix and if j is not i and adjMatrix[j][i] are not 0 then add node j
-        // Else returns node.IndexOf(i)
+        // Else returns new list, findMyNeighbours
         List<Node> findMyNeighbours = new List<Node>();
         int neighbourNodeI = nodes.IndexOf(i);
 
